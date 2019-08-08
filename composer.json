@@ -1,0 +1,35 @@
+{
+  "name": "novembit/dev-log-debugger",
+  "description": "Simple logger",
+  "keywords": [
+    "logger",
+    "debugger"
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0",
+    "ext-json": "*",
+    "ext-dom": "*",
+    "ext-libxml": "*",
+    "ext-sqlite3": "*",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
+  "scripts": {
+  },
+  "extra": {
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

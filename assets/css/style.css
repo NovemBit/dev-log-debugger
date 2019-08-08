@@ -1,0 +1,4 @@
+.dev-log-auto-table tr>td:not(.sub-table-column):nth-child(2){
+    word-break: break-word!important;
+    overflow-wrap: break-word!important;
+}
