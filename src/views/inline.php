@@ -14,7 +14,7 @@ $url = DevLogHelper::getActualUrlFromServer( $instance->getDataList()->getData( 
 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 
     <div class="btn-group" role="group" aria-label="First group">
-        <a role="button" target="_blank" href="/<?php echo DEV_LOG_URL_PATH; ?>/view/<?php echo $name; ?>"
+        <a role="button" target="_blank" href="/<?php echo DEV_LOG_DEBUGGER_URL_PATH; ?>/view/<?php echo $name; ?>"
            class="btn btn-dark"><?php echo DevLog::$scriptName; ?></a>
         <button type="button" class="btn btn-secondary"><span
                     title="<?php echo $url; ?>"><?php echo DevLogHelper::trimString( $url ); ?></span></button>

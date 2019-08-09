@@ -6,6 +6,7 @@
     "debugger"
   ],
   "minimum-stability": "stable",
+  "type": "project",
   "require": {
     "php": ">=7.0",
     "ext-json": "*",

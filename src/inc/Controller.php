@@ -30,6 +30,10 @@ class Controller {
 		}
 
 
+		/*
+		 * If routes registered then
+		 * Exit from script
+		 * */
 		if( $this->registerRoutes()){
 			die();
 		}
@@ -44,21 +48,21 @@ class Controller {
 
 		$route = strtok( isset( $_SERVER["REQUEST_URI"] ) ? $_SERVER["REQUEST_URI"] : '', '?' );
 
-		if ( trim( $route, '/' ) == DEV_LOG_URL_PATH ) {
+		if ( trim( $route, '/' ) == DEV_LOG_DEBUGGER_URL_PATH ) {
 
 			$this->actionDefault();
 
 			return true;
 		}
 
-		if ( preg_match( '/^\/' . DEV_LOG_URL_PATH . '\/view\/(?<name>.*)?$/', $route, $matches ) ) {
+		if ( preg_match( '/^\/' . DEV_LOG_DEBUGGER_URL_PATH . '\/view\/(?<name>.*)?$/', $route, $matches ) ) {
 
 			$this->actionView( $matches['name'] );
 
 			return true;
 		}
 
-		if ( preg_match( '/^\/' . DEV_LOG_URL_PATH . '\/inline\/(?<name>.*)?$/', $route, $matches ) ) {
+		if ( preg_match( '/^\/' . DEV_LOG_DEBUGGER_URL_PATH . '\/inline\/(?<name>.*)?$/', $route, $matches ) ) {
 
 			$this->actionInline( $matches['name'] );
 

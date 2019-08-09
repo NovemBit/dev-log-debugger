@@ -44,7 +44,7 @@ use DevLog\DevLogHelper;
             <td><?php echo $i;
 				$i ++; ?></td>
             <td>
-                <a href="/<?php echo DEV_LOG_URL_PATH; ?>/view/<?php echo $instance->getName(); ?>"><?php echo DevLogHelper::trimString( $instance->getName(), '12', '' ); ?></a>
+                <a href="/<?php echo DEV_LOG_DEBUGGER_URL_PATH; ?>/view/<?php echo $instance->getName(); ?>"><?php echo DevLogHelper::trimString( $instance->getName(), '12', '' ); ?></a>
             </td>
             <td><span title="<?php echo $url; ?>"><?php echo DevLogHelper::trimString( $url ); ?></span></td>
             <td><?php echo DevLogHelper::getUserIpAddressFromServer( $instance->getDataList()->getData( '_server' )->getValue( LogData::ASSOC ) ); ?></td>

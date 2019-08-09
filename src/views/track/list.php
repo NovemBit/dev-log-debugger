@@ -24,7 +24,7 @@ use DevLog\DevLogHelper;
 		$tracker = DevLog::getTrackers()[ $id ] ?>
         <tr>
             <td>
-                <a href="/<?php echo DEV_LOG_URL_PATH; ?>/track/view/<?php echo $id; ?>"><?php echo DevLogHelper::trimString( $id, '100', '' ); ?></a>
+                <a href="/<?php echo DEV_LOG_DEBUGGER_URL_PATH; ?>/track/view/<?php echo $id; ?>"><?php echo DevLogHelper::trimString( $id, '100', '' ); ?></a>
             </td>
             <td>
 				<?php echo isset( $tracker['criteria'] ) ? count( $tracker['criteria'] ) : 0; ?>
