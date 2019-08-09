@@ -1,11 +1,11 @@
 <?php
 
-namespace DevLog;
+namespace DevLogDebugger;
 
 use DevLog\DataMapper\Mappers\Log;
+use DevLog\DevLogHelper;
 
-class DevLogController {
-
+class Controller {
 
 	public $layout = null;
 
@@ -30,7 +30,9 @@ class DevLogController {
 		}
 
 
-		return $this->registerRoutes();
+		if( $this->registerRoutes()){
+			die();
+		}
 	}
 
 
@@ -46,45 +48,24 @@ class DevLogController {
 
 			$this->actionDefault();
 
-			die();
+			return true;
 		}
 
 		if ( preg_match( '/^\/' . DEV_LOG_URL_PATH . '\/view\/(?<name>.*)?$/', $route, $matches ) ) {
 
 			$this->actionView( $matches['name'] );
 
-			die();
+			return true;
 		}
 
 		if ( preg_match( '/^\/' . DEV_LOG_URL_PATH . '\/inline\/(?<name>.*)?$/', $route, $matches ) ) {
 
 			$this->actionInline( $matches['name'] );
 
-			die();
+			return true;
 		}
 
-		if ( trim( $route, '/' ) == DEV_LOG_URL_PATH . '/track' ) {
-
-			$this->actionTrack();
-
-			die();
-		}
-
-		if ( preg_match( '/^\/' . DEV_LOG_URL_PATH . '\/track\/view\/(?<name>.*)?$/', $route, $matches ) ) {
-
-			$this->actionTrackView( $matches['name'] );
-
-			die();
-		}
-
-		if ( preg_match( '/^\/' . DEV_LOG_URL_PATH . '\/track\/delete\/(?<name>.*)?$/', $route, $matches ) ) {
-
-			$this->actionTrackDelete( $matches['name'] );
-
-			die();
-		}
-
-		return true;
+		return false;
 	}
 
 

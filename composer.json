@@ -12,7 +12,8 @@
     "ext-dom": "*",
     "ext-libxml": "*",
     "ext-sqlite3": "*",
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "novembit/dev-log": "dev-master"
   },
   "require-dev": {
   },
